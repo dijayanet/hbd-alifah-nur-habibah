@@ -6,147 +6,39 @@
   <title>For Alifah Nur Habibah - 08.10.04</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --cream: #f6f1eb;
-      --maroon: #4a1921;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: var(--cream);
-      font-family: 'Poppins', sans-serif;
-      color: var(--maroon);
-      overflow-x: hidden;
-    }
-
-    h1, h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-    }
-
-    .page {
-      display: none;
-      min-height: 100vh;
-      width: 100%;
-      padding: 50px 20px;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      animation: fade .6s ease;
-    }
-
-    .page.active {
-      display: flex;
-    }
-
-    @keyframes fade {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .btn {
-      background: var(--maroon);
-      color: #fff;
-      border: none;
-      padding: 12px 28px;
-      border-radius: 30px;
-      margin: 6px;
-      cursor: pointer;
-      font-size: 14px;
-      letter-spacing: 1px;
-      transition: .3s;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-    }
-
-    .popup {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: var(--maroon);
-      color: white;
-      padding: 35px 50px;
-      border-radius: 18px;
-      display: none;
-      z-index: 99;
-      text-align: center;
-    }
-
-    .popup.show {
-      display: block;
-    }
-
-    .grid-pass {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      max-width: 300px;
-      margin-top: 20px;
-    }
-
-    .letter-box {
-      background: var(--maroon);
-      color: #f6f1eb;
-      text-align: left;
-      padding: 30px;
-      border-radius: 15px;
-      max-width: 600px;
-      line-height: 1.8;
-      margin-top: 20px;
-    }
-
-    .tag {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      border: 1px solid var(--maroon);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-    }
-
-    .polaroid {
-      background: #fff;
-      padding: 8px 8px 28px 8px;
-      border-radius: 4px;
-      box-shadow: 0 10px 20px rgba(0,0,0,.12);
-      width: 135px;
-    }
+    :root { --cream: #f6f1eb; --maroon: #4a1921; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--cream); font-family: 'Poppins', sans-serif; color: var(--maroon); overflow-x: hidden; }
+    h1, h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+    .page { display: none; min-height: 100vh; width: 100%; padding: 50px 20px; flex-direction: column; align-items: center; justify-content: center; text-align: center; animation: fade .6s ease; }
+    .page.active { display: flex; }
+    @keyframes fade { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+    .btn { background: var(--maroon); color: #fff; border: none; padding: 12px 28px; border-radius: 30px; margin: 6px; cursor: pointer; font-size: 14px; letter-spacing: 1px; transition: .3s; }
+    .btn:hover { transform: scale(1.05); }
+    .popup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--maroon); color: white; padding: 35px 50px; border-radius: 18px; display: none; z-index: 99; text-align: center; }
+    .popup.show { display: block; }
+    .grid-pass { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 300px; margin-top: 20px; }
+    .letter-box { background: var(--maroon); color: #f6f1eb; text-align: left; padding: 30px; border-radius: 15px; max-width: 600px; line-height: 1.8; margin-top: 20px; }
+    .tag { position: absolute; top: 20px; right: 20px; border: 1px solid var(--maroon); padding: 4px 12px; border-radius: 20px; font-size: 12px; }
+    .polaroid { background: #fff; padding: 8px 8px 28px 8px; border-radius: 4px; box-shadow: 0 10px 20px rgba(0,0,0,.12); width: 135px; }
   </style>
 </head>
 <body>
 
-  <!-- PAGE 1 -->
   <div id="p1" class="page active">
     <div style="position:relative; width:100%; max-width:700px;">
       <span class="tag">Next</span>
       <h1 style="font-size:65px; line-height:.9;">Happy<br>Birthday</h1>
       <p style="letter-spacing:4px; margin-top:10px;">ALIFAH NUR HABIBAH</p>
       <div style="display:flex; gap:15px; justify-content:center; margin-top:35px;">
-        <div class="polaroid" style="transform:rotate(-5deg)"><img src="foto/foto1.jpg" style="width:100%; height:160px; object-fit:cover; border-radius:2px;" alt="Foto 1"></div>
-        <div class="polaroid" style="transform:rotate(5deg)"><img src="foto/foto2.jpg" style="width:100%; height:160px; object-fit:cover; border-radius:2px;" alt="Foto 2"></div>
+        <div class="polaroid" style="transform:rotate(-5deg)"><img src="foto/foto1.jpg" style="width:100%; height:160px; object-fit:cover; border-radius:2px;"></div>
+        <div class="polaroid" style="transform:rotate(5deg)"><img src="foto/foto2.jpg" style="width:100%; height:160px; object-fit:cover; border-radius:2px;"></div>
       </div>
       <p style="font-size:11px; margin-top:40px; opacity:.7;">a little digital memory book built with love, just for you — 08.10.04</p>
     </div>
     <button class="btn" style="margin-top:30px" onclick="go('p1','p2')">Buka Hadiahnya 💌</button>
   </div>
 
-  <!-- PAGE 2 - PASSWORD -->
   <div id="p2" class="page">
     <h2 style="font-size:42px;">Pilih Kata Kunci</h2>
     <p>untuk membuka hadiah</p>
@@ -161,9 +53,8 @@
     <p style="font-size:11px; margin-top:20px; opacity:.6;">clue: hari dimana bidadari turun ke bumi</p>
   </div>
 
-  <!-- PAGE 3 - SURAT UTAMA -->
   <div id="p3" class="page">
-    <img src="foto/foto5.jpg" style="width:210px; height:210px; object-fit:cover; border-radius:50%; border:6px solid white; box-shadow:0 10px 20px rgba(0,0,0,.1); margin-bottom:20px;" alt="Foto Utama">
+    <img src="foto/foto5.jpg" style="width:210px; height:210px; object-fit:cover; border-radius:50%; border:6px solid white; box-shadow:0 10px 20px rgba(0,0,0,.1); margin-bottom:20px;">
     <h1 style="font-size:48px;">My Favorite<br>Person!</h1>
     <div class="letter-box">
       <b>Selamat ulang tahun, Alifah ku, Sayangku.</b><br><br>
@@ -174,38 +65,33 @@
     <button class="btn" style="margin-top:25px" onclick="go('p3','p4')">Kenapa kamu spesial? →</button>
   </div>
 
-  <!-- PAGE 4 - KENAPA SPESIAL -->
   <div id="p4" class="page">
     <h2 style="font-size:40px;">Kenapa Kamu Spesial?</h2>
     <div style="display:grid; gap:15px; max-width:650px; width:100%; margin-top:20px; text-align:left;">
       <div style="background:#fff; border-radius:15px; padding:18px;">
-        <b>1. Photobox Kita</b><br>
-        <small>Kita cocok banget. Semoga nanti ada ratusan photobox lagi sama kamu.</small><br>
+        <b>1. Photobox Kita</b><br><small>Kita cocok banget. Semoga nanti ada ratusan photobox lagi sama kamu.</small><br>
         <div style="display:flex; gap:8px; margin-top:10px;">
-          <img src="foto/foto6.jpg" style="width:50%; height:170px; object-fit:cover; border-radius:10px;" alt="Photobox 1">
-          <img src="foto/foto3.jpg" style="width:50%; height:170px; object-fit:cover; border-radius:10px;" alt="Photobox 2">
+          <img src="foto/foto6.jpg" style="width:50%; height:170px; object-fit:cover; border-radius:10px;">
+          <img src="foto/foto3.jpg" style="width:50%; height:170px; object-fit:cover; border-radius:10px;">
         </div>
       </div>
       <div style="background:#fff; border-radius:15px; padding:18px;">
-        <b>2. Anggun di Panggung Gamelan</b><br>
-        <img src="foto/foto1.jpg" style="width:100%; height:220px; object-fit:cover; border-radius:10px; margin-top:10px;" alt="Gamelan">
+        <b>2. Anggun di Panggung Gamelan</b><br><img src="foto/foto1.jpg" style="width:100%; height:220px; object-fit:cover; border-radius:10px; margin-top:10px;">
       </div>
       <div style="background:#fff; border-radius:15px; padding:18px;">
-        <b>3. Senyum Tulus</b><br>
-        <img src="foto/foto4.jpg" style="width:100%; height:220px; object-fit:cover; border-radius:10px; margin-top:10px;" alt="Senyum">
+        <b>3. Senyum Tulus</b><br><img src="foto/foto4.jpg" style="width:100%; height:220px; object-fit:cover; border-radius:10px; margin-top:10px;">
       </div>
     </div>
     <button class="btn" style="margin-top:25px" onclick="go('p4','p5')">Halaman Terakhir →</button>
   </div>
 
-  <!-- PAGE 5 - I LOVE YOU FINAL -->
   <div id="p5" class="page">
     <h1 style="font-size:55px;">I Love You</h1>
     <p style="letter-spacing:3px; margin-top:5px;">ALIFAH NUR HABIBAH</p>
     <div style="display:flex; gap:10px; margin:20px 0; justify-content:center;">
-      <img src="foto/foto1.jpg" style="width:90px; height:110px; border-radius:10px; object-fit:cover;" alt="Foto 1">
-      <img src="foto/foto4.jpg" style="width:90px; height:110px; border-radius:10px; object-fit:cover;" alt="Foto 4">
-      <img src="foto/foto5.jpg" style="width:90px; height:110px; border-radius:10px; object-fit:cover;" alt="Foto 5">
+      <img src="foto/foto1.jpg" style="width:90px; height:110px; border-radius:10px; object-fit:cover;">
+      <img src="foto/foto4.jpg" style="width:90px; height:110px; border-radius:10px; object-fit:cover;">
+      <img src="foto/foto5.jpg" style="width:90px; height:110px; border-radius:10px; object-fit:cover;">
     </div>
     <div class="letter-box">
       Sayang, di hari ulang tahunmu ini aku mau janji satu hal.<br><br>
@@ -218,80 +104,51 @@
     <h2 style="margin-top:35px; font-size:38px;">Make a Wish 🎂</h2>
   </div>
 
-  <!-- POPUP -->
-  <div id="popSalah" class="popup">
-    <div style="font-size:30px">☹️</div>
-    <b>Kata Kunci Salah!</b><br><br>
-    <button class="btn" style="background:white; color:var(--maroon)" onclick="hidePop()">Coba Lagi</button>
-  </div>
-  
-  <div id="popBenar" class="popup">
-    <div style="font-size:30px">💖</div>
-    <b>Yayy Berhasil!!</b><br>
-    <small>Kamu inget tanggal lahir sendiri, hebat!</small><br><br>
-    <button class="btn" style="background:white; color:var(--maroon)" onclick="sukses()">Lanjut</button>
-  </div>
+  <div id="popSalah" class="popup"><div style="font-size:30px">☹️</div><b>Kata Kunci Salah!</b><br><br><button class="btn" style="background:white; color:var(--maroon)" onclick="hidePop()">Coba Lagi</button></div>
+  <div id="popBenar" class="popup"><div style="font-size:30px">💖</div><b>Yayy Berhasil!!</b><br><small>Kamu inget tanggal lahir sendiri, hebat!</small><br><br><button class="btn" style="background:white; color:var(--maroon)" onclick="sukses()">Lanjut</button></div>
 
-  <!-- MUSIC PLAYER -->
-  <audio id="bgm" loop>
-    <source src="music/lagu.mp3" type="audio/mpeg">
-  </audio>
-
+  <!-- MUSIC 2 LAGU - FINAL -->
+  <audio id="bgm" loop><source id="bgmSrc" src="music/happy.mp3" type="audio/mpeg"></audio>
   <button id="musicBtn" onclick="toggleMusic()" style="position:fixed; bottom:20px; right:20px; z-index:999; background:var(--maroon); color:white; border:none; width:50px; height:50px; border-radius:50%; font-size:20px; cursor:pointer;">🎵</button>
 
   <script>
+    const bgm = document.getElementById('bgm');
+    const bgmSrc = document.getElementById('bgmSrc');
+    const musicBtn = document.getElementById('musicBtn');
+    let isPlaying = false;
+    let mode = 'happy';
+
     function go(a, b) {
       document.getElementById(a).classList.remove('active');
       document.getElementById(b).classList.add('active');
       window.scrollTo(0, 0);
+
+      if (a === 'p1' && b === 'p2') {
+        playMusic('music/happy.mp3');
+        mode = 'happy';
+      }
+      if (b === 'p3' && mode === 'happy') {
+        playMusic('music/romantis.mp3');
+        mode = 'romantis';
+      }
     }
 
     function check(p) {
-      if (p === '081004') {
-        document.getElementById('popBenar').classList.add('show');
-      } else {
-        document.getElementById('popSalah').classList.add('show');
-      }
+      if (p === '081004') { document.getElementById('popBenar').classList.add('show'); }
+      else { document.getElementById('popSalah').classList.add('show'); }
     }
+    function hidePop() { document.getElementById('popSalah').classList.remove('show'); }
+    function sukses() { document.getElementById('popBenar').classList.remove('show'); go('p2', 'p3'); }
 
-    function hidePop() {
-      document.getElementById('popSalah').classList.remove('show');
-    }
-
-    function sukses() {
-      document.getElementById('popBenar').classList.remove('show');
-      go('p2', 'p3');
-    }
-
-    const bgm = document.getElementById('bgm');
-    let isPlaying = false;
-
-    function playMusic() {
+    function playMusic(file) {
+      if (file) { bgmSrc.src = file; bgm.load(); }
       bgm.volume = 0.5;
-      bgm.play().catch(() => {});
-      isPlaying = true;
-      document.getElementById('musicBtn').innerText = '⏸️';
+      bgm.play().then(()=>{ isPlaying = true; musicBtn.innerText = '⏸️'; }).catch(()=>{});
     }
-
     function toggleMusic() {
-      if (isPlaying) {
-        bgm.pause();
-        document.getElementById('musicBtn').innerText = '🎵';
-        isPlaying = false;
-      } else {
-        playMusic();
-      }
+      if (isPlaying) { bgm.pause(); musicBtn.innerText = '🎵'; isPlaying = false; }
+      else { bgm.play(); musicBtn.innerText = '⏸️'; isPlaying = true; }
     }
-
-    // Musik otomatis menyala saat menekan tombol "Buka Hadiahnya" di Page 1
-    const oldGo = go;
-    go = function(a, b) {
-      oldGo(a, b);
-      if (a === 'p1' && !isPlaying) {
-        playMusic();
-      }
-    };
   </script>
-
 </body>
-</html>
+        </html>
