@@ -4,44 +4,399 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>For Alifah Nur Habibah - 08.10.04</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
   <style>
-    :root { --cream: #f6f1eb; --maroon: #4a1921; }
+    /* =========================
+       ROOT & RESET
+    ========================= */
+    :root {
+      --cream: #f6f1eb;
+      --maroon: #4a1921;
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: var(--cream); font-family: 'Poppins', sans-serif; color: var(--maroon); overflow-x: hidden; }
-    h1, h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; }
-    .page { display: none; min-height: 100vh; width: 100%; padding: 50px 20px; flex-direction: column; align-items: center; justify-content: center; text-align: center; animation: fade .6s ease; }
+
+    body {
+      background: var(--cream);
+      font-family: 'Poppins', sans-serif;
+      color: var(--maroon);
+      overflow-x: hidden;
+    }
+
+    h1, h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+    }
+
+    /* =========================
+       PAGE SYSTEM
+    ========================= */
+    .page {
+      display: none;
+      min-height: 100vh;
+      width: 100%;
+      padding: 50px 20px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      animation: fade .6s ease;
+    }
     .page.active { display: flex; }
-    @keyframes fade { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-    .btn { background: var(--maroon); color: #fff; border: none; padding: 12px 28px; border-radius: 30px; margin: 6px; cursor: pointer; font-size: 14px; letter-spacing: 1px; transition: .3s; }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(15px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =========================
+       TEXT ENTER ANIMATION
+    ========================= */
+    .page.active > * {
+      animation: slideFromTop .8s cubic-bezier(.22,.61,.36,1) backwards;
+    }
+    .page.active > *:nth-child(1) { animation-delay: .10s; }
+    .page.active > *:nth-child(2) { animation-delay: .25s; }
+    .page.active > *:nth-child(3) { animation-delay: .40s; }
+    .page.active > *:nth-child(4) { animation-delay: .55s; }
+    .page.active > *:nth-child(5) { animation-delay: .70s; }
+    .page.active > *:nth-child(6) { animation-delay: .85s; }
+    .page.active > *:nth-child(7) { animation-delay: 1.00s; }
+    .page.active > *:nth-child(8) { animation-delay: 1.15s; }
+
+    @keyframes slideFromTop {
+      from { opacity: 0; transform: translateY(-60px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .page.active #p4Grid > div {
+      animation: slideFromTop .7s ease backwards;
+    }
+    .page.active #p4Grid > div:nth-child(1) { animation-delay: .55s; }
+    .page.active #p4Grid > div:nth-child(2) { animation-delay: .75s; }
+    .page.active #p4Grid > div:nth-child(3) { animation-delay: .95s; }
+    .page.active > #p4Grid { animation: none; }
+
+    /* =========================
+       FLOATING PHOTOS
+       (mengambang + berdetak seperti jantung)
+    ========================= */
+    @keyframes floatHeartbeat {
+      0%   { transform: translateY(0) scale(1); }
+      15%  { transform: translateY(-5px) scale(1.04); }
+      30%  { transform: translateY(0) scale(1); }
+      45%  { transform: translateY(-5px) scale(1.05); }
+      60%  { transform: translateY(0) scale(1); }
+      75%  { transform: translateY(-10px) scale(1.02); }
+      100% { transform: translateY(0) scale(1); }
+    }
+
+    .float-photo {
+      animation: floatHeartbeat 3.4s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    /* =========================
+       TYPEWRITER (LETTER BOX)
+    ========================= */
+    .letter-box .line { margin-bottom: 1em; }
+    .letter-box .line:last-child { margin-bottom: 0; }
+
+    .letter-box .char {
+      opacity: 0;
+      transition: opacity .18s ease;
+    }
+    .letter-box .char.visible { opacity: 1; }
+
+    .letter-box .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: currentColor;
+      margin-left: 2px;
+      vertical-align: text-bottom;
+      animation: cursorBlink .8s steps(1) infinite;
+    }
+    @keyframes cursorBlink { 50% { opacity: 0; } }
+
+    /* =========================
+       COMPONENTS
+    ========================= */
+    .btn {
+      background: var(--maroon);
+      color: #fff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 30px;
+      margin: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: .3s;
+    }
     .btn:hover { transform: scale(1.05); }
-    .popup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--maroon); color: white; padding: 35px 50px; border-radius: 18px; display: none; z-index: 99; text-align: center; }
+
+    .popup {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--maroon);
+      color: white;
+      padding: 35px 50px;
+      border-radius: 18px;
+      display: none;
+      z-index: 99;
+      text-align: center;
+    }
     .popup.show { display: block; }
-    .grid-pass { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 300px; margin-top: 20px; }
-    .letter-box { background: var(--maroon); color: #f6f1eb; text-align: left; padding: 30px; border-radius: 15px; max-width: 600px; line-height: 1.8; margin-top: 20px; }
-    .tag { position: absolute; top: 20px; right: 20px; border: 1px solid var(--maroon); padding: 4px 12px; border-radius: 20px; font-size: 12px; }
-    .polaroid { background: #fff; padding: 8px 8px 28px 8px; border-radius: 4px; box-shadow: 0 10px 20px rgba(0,0,0,.12); width: 135px; }
+
+    .grid-pass {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      max-width: 300px;
+      margin-top: 20px;
+    }
+
+    .letter-box {
+      background: var(--maroon);
+      color: #f6f1eb;
+      text-align: left;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 600px;
+      line-height: 1.8;
+      margin-top: 20px;
+    }
+    .letter-box p { font-size: 14px; }
+
+    .tag {
+      position: absolute;
+      top: 20px; right: 20px;
+      border: 1px solid var(--maroon);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+
+    .polaroid {
+      background: #fff;
+      padding: 8px 8px 28px 8px;
+      border-radius: 4px;
+      box-shadow: 0 10px 20px rgba(0,0,0,.12);
+      width: 135px;
+    }
+
+    /* =========================
+       FLOATING HEARTS
+    ========================= */
+    .floating-hearts span {
+      position: absolute;
+      bottom: -20px;
+      font-size: 20px;
+      animation: heartFloat 6s linear infinite;
+      opacity: .5;
+      pointer-events: none;
+    }
+    .floating-hearts span:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .floating-hearts span:nth-child(2) { left: 30%; animation-delay: 2s; }
+    .floating-hearts span:nth-child(3) { left: 50%; animation-delay: 1s; }
+    .floating-hearts span:nth-child(4) { left: 70%; animation-delay: 3s; }
+    .floating-hearts span:nth-child(5) { left: 90%; animation-delay: 4s; }
+
+    @keyframes heartFloat {
+      from { transform: translateY(0) rotate(0deg); opacity: 0; }
+      20%  { opacity: .6; }
+      to   { transform: translateY(-400px) rotate(180deg); opacity: 0; }
+    }
+
+    /* =========================
+       DISTANCE PAGE
+    ========================= */
+    .distance-page {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(74,25,33,.06), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(74,25,33,.05), transparent 30%),
+        var(--cream);
+    }
+
+    .distance-title .small-script {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 25px;
+      opacity: .7;
+    }
+    .distance-title h1 { font-size: 52px; margin: 5px 0; }
+    .distance-title p { letter-spacing: 3px; font-size: 13px; }
+
+    .distance-map {
+      position: relative;
+      width: min(650px, 90vw);
+      height: 280px;
+      margin: 35px auto 15px;
+      background:
+        linear-gradient(rgba(74,25,33,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(74,25,33,.04) 1px, transparent 1px);
+      background-size: 35px 35px;
+      border-radius: 25px;
+      overflow: hidden;
+    }
+
+    .route-line {
+      position: absolute;
+      top: 50%; left: 18%;
+      width: 64%; height: 2px;
+      background: repeating-linear-gradient(
+        to right,
+        var(--maroon) 0px, var(--maroon) 8px,
+        transparent 8px, transparent 15px
+      );
+      animation: routeAppear 2s ease forwards;
+    }
+
+    .location {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+      z-index: 5;
+    }
+    .location.majalengka { left: 7%; }
+    .location.kuningan  { right: 7%; }
+
+    .photo-pin {
+      width: 78px; height: 78px;
+      padding: 4px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(0,0,0,.18);
+      animation: floatHeartbeat 3.4s ease-in-out infinite;
+    }
+    .photo-pin img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .pin-dot {
+      width: 10px; height: 10px;
+      background: var(--maroon);
+      border-radius: 50%;
+      margin: 8px auto 4px;
+    }
+    .location h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 25px;
+      font-style: italic;
+    }
+    .location small { font-size: 10px; opacity: .7; }
+
+    .plane {
+      position: absolute;
+      top: 38%; left: 18%;
+      font-size: 28px;
+      z-index: 10;
+      animation: fly 4s ease-in-out infinite;
+    }
+
+    .distance-text { max-width: 550px; margin-top: 15px; }
+    .distance-text p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 22px;
+      line-height: 1.4;
+    }
+    .distance-text strong {
+      display: block;
+      margin: 12px 0;
+      letter-spacing: 3px;
+      font-size: 13px;
+    }
+    .distance-text span {
+      display: block;
+      font-size: 12px;
+      opacity: .7;
+      line-height: 1.7;
+    }
+
+    @keyframes routeAppear { from { width: 0; } to { width: 64%; } }
+
+    @keyframes fly {
+      0%   { left: 18%; transform: translateY(0) rotate(0deg); }
+      45%  { transform: translateY(-18px) rotate(-5deg); }
+      50%  { left: 47%; }
+      100% { left: 78%; transform: translateY(0) rotate(5deg); }
+    }
+
+    /* =========================
+       MUSIC BUTTON
+    ========================= */
+    #musicBtn {
+      position: fixed;
+      bottom: 20px; right: 20px;
+      z-index: 999;
+      background: var(--maroon);
+      color: white;
+      border: none;
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+    }
   </style>
 </head>
+
 <body>
 
+  <!-- =========================
+       FLOATING HEARTS
+  ========================= -->
+  <div class="floating-hearts">
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+  </div>
+
+  <!-- =========================
+       PAGE 1 — HAPPY BIRTHDAY
+  ========================= -->
   <div id="p1" class="page active">
     <div style="position:relative; width:100%; max-width:700px;">
       <span class="tag">Next</span>
       <h1 style="font-size:65px; line-height:.9;">Happy<br>Birthday</h1>
       <p style="letter-spacing:4px; margin-top:10px;">ALIFAH NUR HABIBAH</p>
+
       <div style="display:flex; gap:15px; justify-content:center; margin-top:35px;">
-        <div class="polaroid" style="transform:rotate(-5deg)"><img src="foto/foto1.jpg" style="width:100%; height:160px; object-fit:cover; border-radius:2px;"></div>
-        <div class="polaroid" style="transform:rotate(5deg)"><img src="foto/foto2.jpg" style="width:100%; height:160px; object-fit:cover; border-radius:2px;"></div>
+        <div class="polaroid" style="transform:rotate(-5deg)">
+          <img class="float-photo" src="foto/foto1.jpg"
+               style="width:100%; height:160px; object-fit:cover; border-radius:2px;">
+        </div>
+        <div class="polaroid" style="transform:rotate(5deg)">
+          <img class="float-photo" src="foto/foto2.jpg"
+               style="width:100%; height:160px; object-fit:cover; border-radius:2px; animation-delay:.5s;">
+        </div>
       </div>
-      <p style="font-size:11px; margin-top:40px; opacity:.7;">a little digital memory book built with love, just for you — 08.10.04</p>
+
+      <p style="font-size:11px; margin-top:40px; opacity:.7;">
+        a little digital memory book built with love, just for you — 08.10.04
+      </p>
     </div>
     <button class="btn" style="margin-top:30px" onclick="go('p1','p2')">Buka Hadiahnya 💌</button>
   </div>
 
+  <!-- =========================
+       PAGE 2 — PASSWORD
+  ========================= -->
   <div id="p2" class="page">
     <h2 style="font-size:42px;">Pilih Kata Kunci</h2>
     <p>untuk membuka hadiah</p>
+
     <div class="grid-pass">
       <button class="btn" onclick="check('151004')">151004</button>
       <button class="btn" onclick="check('081004')">081004</button>
@@ -50,105 +405,312 @@
       <button class="btn" onclick="check('081005')">081005</button>
       <button class="btn" onclick="check('080804')">080804</button>
     </div>
-    <p style="font-size:11px; margin-top:20px; opacity:.6;">clue: hari dimana bidadari turun ke bumi</p>
+
+    <p style="font-size:11px; margin-top:20px; opacity:.6;">
+      clue: hari dimana bidadari turun ke bumi
+    </p>
   </div>
 
-  <div id="p3" class="page">
-    <img src="foto/foto5.jpg" style="width:210px; height:210px; object-fit:cover; border-radius:50%; border:6px solid white; box-shadow:0 10px 20px rgba(0,0,0,.1); margin-bottom:20px;">
-    <h1 style="font-size:48px;">My Favorite<br>Person!</h1>
-    <div class="letter-box">
-      <b>Selamat ulang tahun, Alifah ku, Sayangku.</b><br><br>
-      Di hari yang indah ini, 08 Oktober, aku mau bilang terima kasih karena kamu sudah lahir ke dunia ini. Terima kasih karena kehadiranmu membuat duniaku yang biasa aja jadi penuh warna.<br><br>
-      Alifah Nur Habibah, sejak kamu ada, aku belajar bahwa jatuh cinta itu bukan tentang menemukan yang sempurna, tapi tentang menemukan seseorang yang membuat semua kekurangan terasa sempurna. Dan itu kamu.<br><br>
-      Bertambah usia, bertambah cantik, bertambah dewasa. Aku berdoa di umurmu yang baru ini, semua lelahmu diganti bahagia, semua tangismu diganti tawa, dan semua mimpi-mimpimu satu per satu dikabulkan oleh Allah. Aku akan ada di setiap langkahnya.
+  <!-- =========================
+       PAGE — DISTANCE
+  ========================= -->
+  <div id="pDistance" class="page distance-page">
+    <div class="distance-title">
+      <span class="small-script">Even miles can't change</span>
+      <h1>How Far We Are?</h1>
+      <p>Majalengka ♡ Kuningan</p>
     </div>
+
+    <div class="distance-map">
+      <div class="route-line"></div>
+
+      <div class="location majalengka">
+        <div class="photo-pin">
+          <img src="foto/majalengka.jpg" alt="Aa - Majalengka">
+        </div>
+        <div class="pin-dot"></div>
+        <h3>Majalengka</h3>
+        <small>Aa 🤍</small>
+      </div>
+
+      <div class="plane">✈</div>
+
+      <div class="location kuningan">
+        <div class="photo-pin" style="animation-delay:.5s">
+          <img src="foto/kuningan.jpg" alt="Adek - Kuningan">
+        </div>
+        <div class="pin-dot"></div>
+        <h3>Kuningan</h3>
+        <small>Adek 🤍</small>
+      </div>
+    </div>
+
+    <div class="distance-text">
+      <p>
+        Ada jarak di antara kita,<br>
+        tapi bukan berarti hati kita ikut berjauhan.
+      </p>
+      <strong>Majalengka — Kuningan</strong>
+      <span>
+        sejauh apa pun jalannya,<br>
+        Aa tetap tahu ke mana harus pulang. 🤍
+      </span>
+    </div>
+
+    <button class="btn distance-btn" onclick="go('pDistance','p3')">
+      Lanjutkan Cerita →
+    </button>
+  </div>
+
+  <!-- =========================
+       PAGE 3 — MY FAVORITE PERSON
+  ========================= -->
+  <div id="p3" class="page">
+    <img class="float-photo" src="foto/foto5.jpg"
+         style="width:210px; height:210px; object-fit:cover; border-radius:50%; border:6px solid white; box-shadow:0 10px 20px rgba(0,0,0,.1); margin-bottom:20px;">
+
+    <h1 style="font-size:48px;">My Favorite<br>Person!</h1>
+
+    <div class="letter-box">
+      <p class="line"><b>Selamat ulang tahun, Alifah ku, Sayangku.</b></p>
+      <p class="line">Di hari yang indah ini, 08 Oktober, aku mau bilang terima kasih karena kamu sudah lahir ke dunia ini. Terima kasih karena kehadiranmu membuat duniaku yang biasa aja jadi penuh warna.</p>
+      <p class="line">Alifah Nur Habibah, sejak kamu ada, aku belajar bahwa jatuh cinta itu bukan tentang menemukan yang sempurna, tapi tentang menemukan seseorang yang membuat semua kekurangan terasa sempurna. Dan itu kamu.</p>
+      <p class="line">Bertambah usia, bertambah cantik, bertambah dewasa. Aku berdoa di umurmu yang baru ini, semua lelahmu diganti bahagia, semua tangismu diganti tawa, dan semua mimpi-mimpimu satu per satu dikabulkan oleh Allah. Aku akan ada di setiap langkahnya.</p>
+    </div>
+
     <button class="btn" style="margin-top:25px" onclick="go('p3','p4')">Kenapa kamu spesial? →</button>
   </div>
 
+  <!-- =========================
+       PAGE 4 — KENAPA KAMU SPESIAL
+  ========================= -->
   <div id="p4" class="page">
     <h2 style="font-size:40px;">Kenapa Kamu Spesial?</h2>
-    <div style="display:grid; gap:15px; max-width:650px; width:100%; margin-top:20px; text-align:left;">
+
+    <div id="p4Grid" style="display:grid; gap:15px; max-width:650px; width:100%; margin-top:20px; text-align:left;">
+
       <div style="background:#fff; border-radius:15px; padding:18px;">
-        <b>1. Photobox Kita</b><br><small>Kita cocok banget. Semoga nanti ada ratusan photobox lagi sama kamu.</small><br>
+        <b>1. Photobox Kita</b><br>
+        <small>Kita cocok banget. Semoga nanti ada ratusan photobox lagi sama kamu.</small><br>
         <div style="display:flex; gap:8px; margin-top:10px;">
-          <img src="foto/foto6.jpg" style="width:50%; height:170px; object-fit:cover; border-radius:10px;">
-          <img src="foto/foto3.jpg" style="width:50%; height:170px; object-fit:cover; border-radius:10px;">
+          <img class="float-photo" src="foto/foto6.jpg"
+               style="width:50%; height:170px; object-fit:cover; border-radius:10px;">
+          <img class="float-photo" src="foto/foto3.jpg"
+               style="width:50%; height:170px; object-fit:cover; border-radius:10px; animation-delay:.6s;">
         </div>
       </div>
+
       <div style="background:#fff; border-radius:15px; padding:18px;">
-        <b>2. Anggun di Panggung Gamelan</b><br><img src="foto/foto1.jpg" style="width:100%; height:220px; object-fit:cover; border-radius:10px; margin-top:10px;">
+        <b>2. Anggun di Panggung Gamelan</b><br>
+        <img class="float-photo" src="foto/foto1.jpg"
+             style="width:100%; height:220px; object-fit:cover; border-radius:10px; margin-top:10px;">
       </div>
+
       <div style="background:#fff; border-radius:15px; padding:18px;">
-        <b>3. Senyum Tulus</b><br><img src="foto/foto4.jpg" style="width:100%; height:220px; object-fit:cover; border-radius:10px; margin-top:10px;">
+        <b>3. Senyum Tulus</b><br>
+        <img class="float-photo" src="foto/foto4.jpg"
+             style="width:100%; height:220px; object-fit:cover; border-radius:10px; margin-top:10px; animation-delay:.3s;">
       </div>
+
     </div>
+
     <button class="btn" style="margin-top:25px" onclick="go('p4','p5')">Halaman Terakhir →</button>
   </div>
 
+  <!-- =========================
+       PAGE 5 — I LOVE YOU
+  ========================= -->
   <div id="p5" class="page">
     <h1 style="font-size:55px;">I Love You</h1>
     <p style="letter-spacing:3px; margin-top:5px;">ALIFAH NUR HABIBAH</p>
+
     <div style="display:flex; gap:10px; margin:20px 0; justify-content:center;">
-      <img src="foto/foto1.jpg" style="width:90px; height:110px; border-radius:10px; object-fit:cover;">
-      <img src="foto/foto4.jpg" style="width:90px; height:110px; border-radius:10px; object-fit:cover;">
-      <img src="foto/foto5.jpg" style="width:90px; height:110px; border-radius:10px; object-fit:cover;">
+      <img class="float-photo" src="foto/foto1.jpg"
+           style="width:90px; height:110px; border-radius:10px; object-fit:cover;">
+      <img class="float-photo" src="foto/foto4.jpg"
+           style="width:90px; height:110px; border-radius:10px; object-fit:cover; animation-delay:.4s;">
+      <img class="float-photo" src="foto/foto5.jpg"
+           style="width:90px; height:110px; border-radius:10px; object-fit:cover; animation-delay:.8s;">
     </div>
+
     <div class="letter-box">
-      Sayang, di hari ulang tahunmu ini aku mau janji satu hal.<br><br>
-      Aku gak janji selalu bisa bikin kamu tertawa, tapi aku janji akan selalu ada untuk menghapus air matamu. Aku gak janji hidup kita akan selalu mudah, tapi aku janji kita lewatin susah senangnya bareng.<br><br>
-      Terima kasih sudah lahir, terima kasih sudah memilih bertahan sama aku sampai detik ini. Aku bangga punya kamu.<br><br>
-      Selamat ulang tahun yang ke-22, bidadariku. Semoga panjang umur, sehat selalu, dilancarkan rezekinya, dan semua doa baikmu diijabah Allah.<br><br>
-      Sekarang, pejamkan matamu dan buat permintaan. Sebut namaku di dalamnya ya.<br><br>
-      <b>Selalu sayang kamu,<br>- Ramdan Ahmad Dijaya, S.Pd Calon Suami Alifah Nur Habibah -</b>
+      <p class="line">Sayang, di hari ulang tahunmu ini aku mau janji satu hal.</p>
+      <p class="line">Aku gak janji selalu bisa bikin kamu tertawa, tapi aku janji akan selalu ada untuk menghapus air matamu. Aku gak janji hidup kita akan selalu mudah, tapi aku janji kita lewatin susah senangnya bareng.</p>
+      <p class="line">Terima kasih sudah lahir, terima kasih sudah memilih bertahan sama aku sampai detik ini. Aku bangga punya kamu.</p>
+      <p class="line">Selamat ulang tahun yang ke-22, bidadariku. Semoga panjang umur, sehat selalu, dilancarkan rezekinya, dan semua doa baikmu diijabah Allah.</p>
+      <p class="line">Sekarang, pejamkan matamu dan buat permintaan. Sebut namaku di dalamnya ya.</p>
+      <p class="line"><b>Selalu sayang kamu,<br>- Ramdan Ahmad Dijaya, S.Pd Calon Suami Alifah Nur Habibah -</b></p>
     </div>
+
     <h2 style="margin-top:35px; font-size:38px;">Make a Wish 🎂</h2>
   </div>
 
-  <div id="popSalah" class="popup"><div style="font-size:30px">☹️</div><b>Kata Kunci Salah!</b><br><br><button class="btn" style="background:white; color:var(--maroon)" onclick="hidePop()">Coba Lagi</button></div>
-  <div id="popBenar" class="popup"><div style="font-size:30px">💖</div><b>Yayy Berhasil!!</b><br><small>Kamu inget tanggal lahir sendiri, hebat!</small><br><br><button class="btn" style="background:white; color:var(--maroon)" onclick="sukses()">Lanjut</button></div>
+  <!-- =========================
+       POPUP
+  ========================= -->
+  <div id="popSalah" class="popup">
+    <div style="font-size:30px">☹️</div>
+    <b>Kata Kunci Salah!</b><br><br>
+    <button class="btn" style="background:white; color:var(--maroon)" onclick="hidePop()">Coba Lagi</button>
+  </div>
 
-  <!-- MUSIC 2 LAGU - FINAL -->
-  <audio id="bgm" loop><source id="bgmSrc" src="music/happy.mp3" type="audio/mpeg"></audio>
-  <button id="musicBtn" onclick="toggleMusic()" style="position:fixed; bottom:20px; right:20px; z-index:999; background:var(--maroon); color:white; border:none; width:50px; height:50px; border-radius:50%; font-size:20px; cursor:pointer;">🎵</button>
+  <div id="popBenar" class="popup">
+    <div style="font-size:30px">💖</div>
+    <b>Yayy Berhasil!!</b><br>
+    <small>Kamu inget tanggal lahir sendiri, hebat!</small><br><br>
+    <button class="btn" style="background:white; color:var(--maroon)" onclick="sukses()">Lanjut</button>
+  </div>
 
+  <!-- =========================
+       MUSIC
+  ========================= -->
+  <audio id="bgm" loop>
+    <source id="bgmSrc" src="music/happy.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="musicBtn" onclick="toggleMusic()">🎵</button>
+
+  <!-- =========================
+       SCRIPT
+  ========================= -->
   <script>
-    const bgm = document.getElementById('bgm');
-    const bgmSrc = document.getElementById('bgmSrc');
+    const bgm      = document.getElementById('bgm');
+    const bgmSrc   = document.getElementById('bgmSrc');
     const musicBtn = document.getElementById('musicBtn');
+
     let isPlaying = false;
     let mode = 'happy';
 
-    function go(a, b) {
-      document.getElementById(a).classList.remove('active');
-      document.getElementById(b).classList.add('active');
+    /* =========================
+       TYPEWRITER
+    ========================= */
+    function wrapCharsInLine(line) {
+      const walker = document.createTreeWalker(line, NodeFilter.SHOW_TEXT, null);
+      const textNodes = [];
+      let n;
+      while ((n = walker.nextNode())) textNodes.push(n);
+
+      textNodes.forEach(tn => {
+        const text = tn.textContent;
+        if (!text) return;
+        const frag = document.createDocumentFragment();
+        for (const ch of text) {
+          const span = document.createElement('span');
+          span.className = 'char';
+          span.textContent = ch;
+          frag.appendChild(span);
+        }
+        tn.parentNode.replaceChild(frag, tn);
+      });
+    }
+
+    function prepareTypewriters() {
+      document.querySelectorAll('.letter-box .line').forEach(line => {
+        if (line.dataset.prepared) return;
+        line.dataset.prepared = '1';
+        wrapCharsInLine(line);
+      });
+    }
+
+    let typeTimer = null;
+
+    function runTypewriter(pageEl) {
+      if (typeTimer) { clearTimeout(typeTimer); typeTimer = null; }
+
+      const box = pageEl.querySelector('.letter-box');
+      if (!box) return;
+
+      const oldCursor = box.querySelector('.cursor');
+      if (oldCursor) oldCursor.remove();
+
+      const chars = box.querySelectorAll('.char');
+      chars.forEach(c => c.classList.remove('visible'));
+
+      const cursor = document.createElement('span');
+      cursor.className = 'cursor';
+
+      let i = 0;
+      const speed = 28;
+
+      function tick() {
+        if (i >= chars.length) { cursor.remove(); typeTimer = null; return; }
+        const c = chars[i];
+        c.classList.add('visible');
+        c.parentNode.insertBefore(cursor, c.nextSibling);
+        i++;
+        typeTimer = setTimeout(tick, speed);
+      }
+
+      typeTimer = setTimeout(tick, 900);
+    }
+
+    /* =========================
+       NAVIGASI ANTAR HALAMAN
+    ========================= */
+    function go(from, to) {
+      document.getElementById(from).classList.remove('active');
+      const target = document.getElementById(to);
+      target.classList.add('active');
       window.scrollTo(0, 0);
 
-      if (a === 'p1' && b === 'p2') {
+      if (from === 'p1' && to === 'p2') {
         playMusic('music/happy.mp3');
         mode = 'happy';
       }
-      if (b === 'p3' && mode === 'happy') {
+      if (to === 'p3' && mode === 'happy') {
         playMusic('music/romantis.mp3');
         mode = 'romantis';
       }
+      if (to === 'p3' || to === 'p5') {
+        runTypewriter(target);
+      }
     }
 
+    /* =========================
+       VALIDASI PASSWORD
+    ========================= */
     function check(p) {
-      if (p === '081004') { document.getElementById('popBenar').classList.add('show'); }
-      else { document.getElementById('popSalah').classList.add('show'); }
+      if (p === '081004') {
+        document.getElementById('popBenar').classList.add('show');
+      } else {
+        document.getElementById('popSalah').classList.add('show');
+      }
     }
-    function hidePop() { document.getElementById('popSalah').classList.remove('show'); }
-    function sukses() { document.getElementById('popBenar').classList.remove('show'); go('p2', 'p3'); }
+    function hidePop() {
+      document.getElementById('popSalah').classList.remove('show');
+    }
+    function sukses() {
+      document.getElementById('popBenar').classList.remove('show');
+      go('p2', 'pDistance');
+    }
 
+    /* =========================
+       MUSIC CONTROL
+    ========================= */
     function playMusic(file) {
       if (file) { bgmSrc.src = file; bgm.load(); }
       bgm.volume = 0.5;
-      bgm.play().then(()=>{ isPlaying = true; musicBtn.innerText = '⏸️'; }).catch(()=>{});
+      bgm.play().then(() => {
+        isPlaying = true;
+        musicBtn.innerText = '⏸️';
+      }).catch(() => {});
     }
     function toggleMusic() {
-      if (isPlaying) { bgm.pause(); musicBtn.innerText = '🎵'; isPlaying = false; }
-      else { bgm.play(); musicBtn.innerText = '⏸️'; isPlaying = true; }
+      if (isPlaying) {
+        bgm.pause();
+        musicBtn.innerText = '🎵';
+        isPlaying = false;
+      } else {
+        bgm.play();
+        musicBtn.innerText = '⏸️';
+        isPlaying = true;
+      }
     }
+
+    /* =========================
+       INIT
+    ========================= */
+    prepareTypewriters();
   </script>
 </body>
-        </html>
+  </html>
