@@ -8,9 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
-    /* =========================
-       ROOT & RESET
-    ========================= */
     :root {
       --cream: #f6f1eb;
       --maroon: #4a1921;
@@ -204,7 +201,7 @@
     .letter-box.serious-box .serious-title {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 20px;
+      font-size: 22px;
       text-align: center;
       margin-bottom: 16px;
       color: var(--maroon);
@@ -457,6 +454,39 @@
     }
 
     /* =========================
+       SERIOUS PAGE (P7)
+    ========================= */
+    .serious-page {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 25% 20%, rgba(74,25,33,.08), transparent 35%),
+        radial-gradient(circle at 75% 80%, rgba(74,25,33,.06), transparent 35%),
+        var(--cream);
+    }
+
+    .serious-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 44px;
+      line-height: 1.05;
+      animation: titleAppear 1.2s ease forwards;
+    }
+    .serious-sub {
+      letter-spacing: 3px;
+      font-size: 12px;
+      opacity: .7;
+      margin-top: 8px;
+    }
+
+    .serious-divider {
+      font-size: 26px;
+      letter-spacing: 10px;
+      margin: 16px 0 6px;
+      opacity: .8;
+    }
+
+    /* =========================
        MUSIC BUTTON
     ========================= */
     #musicBtn {
@@ -677,20 +707,128 @@
       <p class="line signature"><b>Dengan seluruh cinta yang kupunya,<br>- Ramdan Ahmad Dijaya, S.Pd — Calon Suami Alifah Nur Habibah 💍</b></p>
     </div>
 
-    <!-- PESAN SERIUS -->
-    <div class="letter-box serious-box">
-      <p class="line serious-title">💔 Satu Permintaan Serius dari Mas...</p>
-      <p class="line">Dan satu hal lagi yang Mas minta, Dek... jangan tinggalin dan putusin Mas lagi. Jangan selingkuhin Mas lagi 🤍</p>
-      <p class="line">Cukup yang terjadi tahun 2024 sama Iqbal Jurusan PTIK Angkatan 2024. Waktu November 2024, posisi kita masih pacaran dan masih punya hubungan, tapi Adek juga menjalin hubungan sama Iqbal sampai akhirnya Adek ninggalin Mas demi Iqbal.</p>
-      <p class="line">Kemudian cukup yang kedua kalinya terjadi di Mei 2026 sama Nova temen SMP dan Sekarang dagang Bakso Di Ancaran. Saat itu kita juga masih punya hubungan, bukan sudah benar-benar selesai.</p>
-      <p class="line">Dan untuk yang Juli sampai September 2026, kalau berdasarkan kejadian yang Adek ceritakan, posisi kita memang sedang break. Jadi Mas nggak mau menyebutnya sebagai "diduain" seperti sebelumnya. Tapi kalau hubungan kita saat itu masih belum benar-benar berakhir, berarti secara perasaan Mas, Mas merasa bukan cuma diduain lagi, melainkan ditigain karena ada Mas, Adek, Nova dan ketua KKN.</p>
-      <p class="line">Mas nggak mau kejadian-kejadian seperti itu terulang lagi. Mas cuma ingin setelah semua yang sudah kita lewati, kita sama-sama belajar untuk menjaga hubungan ini dengan kejujuran, kesetiaan, dan tidak meninggalkan satu sama lain dengan alasan apapun atau ketika ada masalah 🤍🕊️</p>
-    </div>
-
     <h2 style="margin-top:35px; font-size:38px;">Make a Wish 🎂✨</h2>
 
-    <button class="btn btn-more btn-long" style="margin-top:20px" onclick="go('p5','p6')">
+    <!-- Tombol menuju halaman PESAN SERIUS -->
+    <button class="btn btn-more btn-long" style="margin-top:20px" onclick="go('p5','p7')">
+      💔 Satu Permintaan Serius dari Mas...
+    </button>
+
+    <!-- Tombol lanjut ke More Love -->
+    <button class="btn btn-long" style="margin-top:12px; background:transparent; color:var(--maroon); border:1.5px solid var(--maroon);" onclick="go('p5','p6')">
+      Lanjut ke Puisi Terakhir 🕊️🤍
+    </button>
+  </div>
+
+  <!-- =========================
+  <!-- =========================
+       PAGE 7 — PESAN SERIUS
+  ========================= -->
+  <div id="p7" class="page serious-page">
+    <div class="serious-heading">Satu Permintaan<br>Serius dari Mas 💔</div>
+    <p class="serious-sub">TOLONG DIBACA DENGAN HATI YANG TENANG</p>
+    <div class="serious-divider">🤍 🕊️ 🤍</div>
+
+    <div class="letter-box serious-box">
+
+      <p class="line serious-title">💔 Adek, Mari Kita Bicara Jujur...</p>
+
+      <p class="line">Adek, mari kita bicara jujur dan pakai logika yang paling jernih. ☕</p>
+
+      <p class="line">Di sini Mas memperjuangkan hubungan ini bukan cuma pakai kata-kata manis, tapi juga lewat pengorbanan nyata. Mas kerja keras, mengajar padat dari pagi sampai sore, bikin laporan, bikin video reels berjam-jam, bikin spanduk, sampai sering kurang tidur demi menata masa depan kita. Di tengah keadaan Mas yang masih serba terbatas, Mas tetap berusaha memenuhi apa yang Adek butuhkan — dari jeans, kuota, sampai raket. Bahkan di tempat kerja, foto Adek Mas pasang di casing HP dan wallpaper, supaya Mas selalu ingat bahwa hati Mas sudah punya tempat untuk satu perempuan.</p>
+
+      <p class="line">Saat status kita sempat break, Mas tetap memilih menjaga komitmen. Kemarin ada perempuan yang DM Mas, dan Mas tegaskan bahwa Mas sudah punya seseorang yang Mas perjuangkan. Mas tidak menggunakan kata "break" sebagai alasan untuk bertingkah seolah-olah bebas, dekat dengan perempuan lain, atau mencari pengganti.</p>
+
+      <p class="line">Karena itu Mas ingin Adek memahami satu hal. Kalau kita sedang memperbaiki hubungan, jangan jadikan kata "break" sebagai ruang untuk membuka kembali kedekatan dengan orang lain. Mas tidak ingin mengulang kejadian seperti 2024 ataupun persoalan yang muncul belakangan.</p>
+
+      <p class="line">Ada satu hal yang selama ini Mas pendam. Bukan karena Mas enggak percaya sama Adek, tapi karena Mas takut kalau Mas mengatakannya, justru membuat Adek pergi. Hari ini Mas memberanikan diri membicarakannya. Bukan untuk menjatuhkan Adek atau mengungkit masa lalu tanpa tujuan, tetapi supaya kita sama-sama memahami luka yang pernah terjadi dan bisa melangkah lebih baik ke depan. 🤍</p>
+
+      <!-- BABAK I -->
+      <p class="line"><b>❥ Babak Pertama — Iqbal, November 2024</b><br>
+      Waktu itu kita masih pacaran. Masih punya hubungan. Masih saling menyebut sayang. Tetapi pada saat yang sama, Adek juga menjalin kedekatan dengan Iqbal, sampai akhirnya Adek memilih dia dan meninggalkan Mas.</p>
+      <p class="line">Dunia Mas rasanya runtuh saat itu. Mas enggak pernah menganggap kejadian itu sebagai sesuatu yang sepele. Mas memilih diam karena masih berharap Adek bahagia.</p>
+      <p class="line">Kemudian hubungan itu juga tidak berjalan seperti yang Adek harapkan. Orang yang Adek pilih ternyata juga memiliki hubungan dengan orang lain. Dari sana Mas berharap Adek bisa mengambil pelajaran bahwa mencari kebahagiaan dengan membuka hubungan baru sebelum hubungan lama benar-benar selesai justru bisa melukai banyak orang.</p>
+
+      <!-- BABAK II -->
+      <p class="line"><b>❥ Babak Kedua — Nova, Mei 2026</b><br>
+      Setelah waktu berlalu, luka itu Mas simpan rapat-rapat. Mas berpikir Adek sudah belajar dari kejadian sebelumnya. Tetapi kemudian muncul kembali kedekatan Adek dengan Nova, teman SMP Adek.</p>
+      <p class="line">Menurut apa yang Mas lihat dan Adek ceritakan, Adek sangat mengejar kedekatan itu. Sering chat, VC, bertukar foto, bahkan sampai mengundangnya ke pernikahan Teh Ririn.</p>
+      <p class="line">Yang membuat Mas semakin sakit adalah ketika dibandingkan dengan perlakuan Adek kepada Mas. Kepada Nova, Adek terlihat begitu mudah memberikan perhatian dan membuka kemungkinan. Sementara ketika bersama Mas, ada banyak syarat dan pertimbangan yang harus dipenuhi sebelum Adek mau melangkah lebih jauh.</p>
+      <p class="line">Adek pernah mengatakan bahwa pendidikan bukan penghalang ketika membicarakan Nova. Adek juga pernah mengatakan bahwa tidak masalah memulai dari sederhana. Sedangkan kepada Mas, ada banyak tuntutan mengenai rumah, pendidikan, pernikahan, dan sebagainya. Padahal Mas dan keluarga Mas menerima Adek tanpa menjadikan semua itu sebagai syarat untuk menghargai Adek.</p>
+      <p class="line">Sampai akhirnya Adek menyatakan perasaan kepada Nova, sementara sebelumnya kepada Mas Adek mengatakan bahwa tidak ada rasa apa-apa. Nova kemudian menolak Adek. Dari kejadian itu, Mas berharap Adek bisa memahami bahwa tidak semua orang yang kita kejar akan menjadi orang yang tepat untuk kita.</p>
+
+      <!-- BABAK III -->
+      <p class="line"><b>❥ Babak Ketiga — Rizki, Juli sampai September 2026</b><br>
+      Ini yang paling berat buat Mas, Dek.</p>
+      <p class="line">Menurut penjelasan Adek, pada saat itu posisi hubungan kita memang sedang break. Karena itu Mas tidak ingin mengabaikan penjelasan Adek mengenai status hubungan kita saat itu. Tetapi kalau pada saat hubungan kita belum benar-benar selesai secara emosional, kemudian Adek membangun kedekatan yang sangat jauh dengan Rizki, wajar kalau Mas merasa sangat terluka.</p>
+      <p class="line">Selama KKN, kedekatan Adek dengan Rizki menurut cerita yang Mas ketahui sudah melewati batas yang menurut Mas seharusnya dijaga. Kalian sering bersama, sering bepergian bersama, saling memberi perhatian, dan membangun komunikasi yang sangat dekat seperti pasangan.</p>
+      <p class="line">Adek juga pernah mengatakan kepada Rizki bahwa Adek jomblo dan tidak dekat dengan siapa pun, sementara pada saat itu hubungan Adek dengan Mas belum benar-benar selesai menurut sudut pandang Mas. Di sisi lain, Adek juga masih memiliki persoalan kedekatan dengan Nova. Itulah yang membuat Mas merasa seolah-olah hati Mas harus berhadapan dengan lebih dari satu orang sekaligus.</p>
+      <p class="line">Mas juga tahu bahwa selama KKN, Rizki sangat bergantung kepada perhatian Adek ketika dia sakit. Adek menyiapkan kebutuhan dan memberi perhatian kepadanya. Dari sudut pandang Mas, semua itu semakin membuat batas hubungan kalian terlihat kabur.</p>
+      <p class="line">Mas tidak ingin mengorek atau mengetahui lebih jauh hal-hal pribadi yang terjadi di antara kalian. Mas cuma tahu bahwa kedekatan tersebut sudah cukup untuk menghancurkan hati Mas ketika Mas mengetahuinya.</p>
+      <p class="line">Setelah KKN selesai, Adek dan Rizki dikatakan sudah sepakat untuk tidak berkomunikasi lagi. Bahkan sempat saling memblokir. Tetapi pada 9 September 2026, ternyata komunikasi itu kembali terjadi. Rizki kembali menghubungi Adek dan mengatakan bahwa dia kangen.</p>
+      <p class="line">Padahal sebelumnya Adek sudah mengatakan kepada Mas bahwa komunikasi dengan dia sudah tidak ada lagi sejak Adek KKN. Di sinilah kepercayaan Mas kembali terguncang. Bukan cuma karena Rizki menghubungi Adek, tetapi karena sebelumnya Mas percaya bahwa hubungan dan komunikasi itu benar-benar sudah selesai.</p>
+      <p class="line">Belum lagi sejak Adek KKN, Mas ternyata tidak bisa melihat story Adek di second Instagram. Belakangan Mas mengetahui bahwa Mas ternyata di-hide dari story tersebut. Di saat yang sama, akun Mas juga di-unfollow dari first Instagram maupun second Instagram Adek. Alasan yang Adek sampaikan adalah karena followers-nya perempuan semua, tetapi di sana tetap ada Nova yang Adek ikuti.</p>
+      <p class="line">Mas tidak mengatakan ini untuk mempermasalahkan setiap orang yang Adek ikuti. Mas cuma ingin menunjukkan kenapa kepercayaan Mas sekarang tidak bisa langsung kembali seperti dulu. Ada beberapa hal yang menurut Mas tidak selaras antara apa yang disampaikan dengan apa yang kemudian Mas temukan.</p>
+
+      <!-- RUANG MAS -->
+      <p class="line"><b>❥ Satu Hal yang Mungkin Adek Enggak Sadar</b><br>
+      Dek, selama ini Mas sering merasa bahwa Mas selalu berada di posisi yang berusaha mempertahankan hubungan ini, bahkan ketika keadaan sedang sulit.</p>
+      <p class="line">Mas selalu berusaha menutup aib Adek. Ketika Adek salah, Mas tetap berusaha membela Adek di depan orang lain karena Mas tidak ingin masalah pribadi kita menjadi konsumsi orang banyak.</p>
+      <p class="line">Mas ingat satu kejadian ketika Adek merasa tidak nyaman karena diperhatikan dan difoto oleh Renis. Saat itu Mas langsung menegur Renis karena Mas merasa Adek perlu dibela. Mas sampai terlibat masalah di tempat ramai dan akhirnya harus menghadapi konsekuensinya sendiri.</p>
+      <p class="line">Mas bukan menceritakan ini untuk meminta penghargaan atau mengungkit jasa. Mas cuma ingin Adek tahu bahwa selama ini Mas selalu berusaha berada di pihak Adek ketika Adek membutuhkan perlindungan. Karena itu Mas juga ingin merasakan hal yang sama dari Adek: ketika Mas benar, tolong hargai dan bela Mas; ketika Mas salah, tegur Mas secara pribadi, jangan membuka aib Mas kepada orang lain.</p>
+
+      <!-- CELAH -->
+      <p class="line"><b>❥ Tentang 9 September dan Celah yang Terbuka Lagi</b><br>
+      Bahkan pada 9 September, ketika akses dan celah itu kembali terbuka, akhirnya dia menghubungi Adek lagi dan mengatakan bahwa dia kangen. Padahal sebelumnya Adek sudah mengatakan kepada Mas bahwa tidak ada komunikasi atau chat-an lagi dengannya sejak Adek KKN.</p>
+      <p class="line">Yang membuat Mas kecewa bukan hanya karena dia kembali menghubungi Adek. Yang membuat Mas mempertanyakan kepercayaan adalah karena sebelumnya Mas percaya dengan ucapan Adek bahwa komunikasi itu sudah tidak ada. Kalau ternyata celahnya masih terbuka, wajar kalau Mas merasa khawatir bahwa kejadian lama bisa terulang kembali.</p>
+      <p class="line">Makanya Mas bilang: jangan membuka celah yang bisa menimbulkan masalah. Kalau ada seseorang dari masa lalu yang kembali menghubungi Adek dengan maksud yang tidak jelas, Mas ingin Adek terbuka dan menjaga batas. Begitu juga Mas — Mas harus melakukan hal yang sama kepada Adek.</p>
+
+      <!-- KEJUJURAN -->
+      <p class="line"><b>❥ Tentang Kejujuran</b><br>
+      Yang paling Mas butuhkan sebenarnya sederhana: kejujuran dan keterbukaan. Kalau ada laki-laki yang menghubungi Adek, cukup terbuka kepada Mas. Tidak perlu menyembunyikan, menghapus, meng-hide story, atau membuat cerita yang berbeda ketika Mas bertanya. Begitu juga sebaliknya. Mas tidak boleh menuntut sesuatu yang Mas sendiri tidak mau lakukan.</p>
+      <p class="line">Tadi ketika Mas menghubungi Adek dan belum mendapat balasan, sementara beberapa menit kemudian Adek membalas chat laki-laki lain, Mas tentu merasa tidak nyaman. Apalagi ketika Mas bertanya dan jawabannya berbeda dengan yang sebenarnya. Yang membuat Mas sakit bukan sekadar siapa yang Adek balas, tetapi rasa bahwa keterbukaan yang sudah kita sepakati kembali goyah.</p>
+
+      <!-- HUBUNGAN KITA -->
+      <p class="line"><b>❥ Tentang Hubungan Kita</b><br>
+      Mas juga tidak mau Adek merasa bahwa karena Mas selalu memaafkan dan selalu menerima Adek kembali, berarti Adek bisa terus melakukan kesalahan lalu menganggap Mas akan selalu ada tanpa batas. Mas ingin kita sama-sama menghargai kesempatan yang sedang kita punya sekarang.</p>
+      <p class="line">Coba posisinya dibalik. Kalau Adek yang terus disakiti, dibohongi, dijadikan pilihan kedua, lalu orang itu baru kembali kepada Adek setelah hubungannya dengan orang lain gagal, tentu Adek juga akan merasa sakit dan tidak dihargai. Mas pun merasakan hal yang sama.</p>
+      <p class="line">Selingkuh dan kebohongan bukan sesuatu yang bisa dianggap sepele dalam sebuah hubungan. Yang Mas harapkan bukan sekadar janji, tetapi perubahan yang benar-benar terlihat dari sikap sehari-hari. Karena setelah menikah nanti, masalah seperti ini bukan hanya akan berdampak kepada Mas dan Adek, tetapi juga kepada rumah tangga yang sedang kita bangun dan keluarga besar kita.</p>
+      <p class="line">Pahami satu hal, Dek: Mas ingin membimbing dan menjaga hubungan ini, bukan mengurung atau menguasai Adek. Mas memang orangnya soft-spoken dan lebih memilih menjelaskan daripada kasar. Tapi kelembutan Mas jangan dianggap sebagai tanda bahwa rasa sakit Mas tidak punya batas.</p>
+      <p class="line">Mas juga ingin kita belajar bahwa ketika sedang emosi atau menghadapi masalah, kita sama-sama kembali kepada kejujuran, komunikasi, istighfar, dan Allah. Bukan saling menyakiti, menyembunyikan sesuatu, atau mencari pelarian kepada orang lain.</p>
+      <p class="line">Mas masih ingin melihat Adek yang dulu Mas kenal: jujur, terbuka, menjaga batas dengan orang lain, dan membuat Mas merasa tenang karena Mas tahu bahwa kata-kata Adek bisa dipercaya.</p>
+
+      <!-- PENUTUP -->
+      <p class="line"><b>❥ Satu Permintaan Terakhir</b><br>
+      Dek, Mas enggak mau kejadian-kejadian seperti itu terulang lagi. Mas sudah cukup lelah. Mas sudah cukup banyak melewati malam dengan pikiran yang berat dan hati yang perih.</p>
+      <p class="line">Mas bukan minta Adek sempurna. Mas juga bukan orang yang sempurna. Mas cuma minta Adek... jangan tinggalin Mas lagi. Jangan putusin Mas lagi. Jangan selingkuhin Mas lagi.</p>
+      <p class="line">Kalau kita memang memilih untuk berjalan bersama, mari sama-sama menjaga hubungan ini dengan kejujuran, kesetiaan, komunikasi, dan tanggung jawab. Mas juga akan berusaha memperbaiki diri. Mas tidak mau hanya menuntut Adek berubah sementara Mas sendiri tidak belajar menjadi pasangan yang lebih baik.</p>
+      <p class="line">Kepercayaan itu harus kita bangun berdua, sedikit demi sedikit, sampai nanti tidak ada lagi kebutuhan untuk saling curiga.</p>
+      <p class="line">Kalau memang kita memilih untuk melangkah menuju pernikahan, mari kita mulai dari sekarang dengan cara yang lebih dewasa: tidak saling menyembunyikan, tidak mencari pelarian ketika ada masalah, tidak membuka kembali hubungan yang seharusnya sudah selesai, dan tidak menjadikan masa lalu sebagai alasan untuk terus saling menyakiti.</p>
+
+      <!-- I LOVE YOU MORE -->
+      <p class="line"><b>❥ I Love You More 🕊️🤍</b><br>
+      Karena pada akhirnya, Dek... mungkin ada satu kalimat yang sampai kapan pun enggak akan pernah Mas lewatkan sedikit pun untuk Adek. Bahkan kalau suatu hari kata-kata Mas sudah enggak sebanyak sekarang, mungkin cuma kalimat ini yang tetap akan Mas bisikkan pelan-pelan kepada Adek:</p>
+      <p class="line" style="text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:26px; letter-spacing:2px; margin: 20px 0;">"I love you more."</p>
+      <p class="line">Bukan cuma sekadar "Mas lebih mencintai Adek", tetapi karena di balik kalimat itu ada seluruh rasa yang mungkin enggak akan pernah cukup dijelaskan dengan kata-kata. Bahwa setiap kali Adek bilang "I love you", Mas akan selalu ingin menjawabnya lebih dalam, lebih jauh, dan lebih lama.</p>
+      <p class="line">Dan kalau suatu hari nanti kita sudah sama-sama tua, rambut sudah memutih, langkah sudah enggak sekuat sekarang, mungkin Mas masih akan mencari tangan Adek, tersenyum kecil, lalu membisikkan kalimat yang sama...</p>
+      <p class="line" style="text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:26px; letter-spacing:2px; margin: 20px 0;">"I love you more." 🕊️🤍</p>
+      <p class="line">Karena mungkin dari sekian banyak kalimat yang pernah Mas ucapkan sepanjang hidup Mas, kalimat itu yang paling Mas ingin Adek ingat sampai kapan pun. 🤍✨</p>
+
+      <p class="line">Mas cuma ingin satu hal dari semua pembicaraan panjang ini:<br>
+      Jangan tinggalin Mas lagi. Jangan selingkuhin Mas lagi. Jangan ulangi luka yang sama.</p>
+
+      <p class="line">Kalau kita masih memilih satu sama lain, mari kali ini benar-benar belajar menjaga satu sama lain.</p>
+
+      <p class="line signature"><b>Yang masih mencintaimu sampai detik ini,<br>- Ramdan Ahmad Dijaya, S.Pd 💍</b></p>
+
+    </div>
+
+    <button class="btn btn-more btn-long" style="margin-top:25px" onclick="go('p7','p6')">
       Jangan Putusin, Selingkuhin, dan Tinggalin Mas untuk yang Ketiga Kalinya 🕊️🤍
+    </button>
+
+    <button class="btn btn-long" style="margin-top:12px; background:transparent; color:var(--maroon); border:1.5px solid var(--maroon);" onclick="go('p7','p5')">
+      ← Balik ke Surat Ulang Tahun
     </button>
   </div>
 
@@ -811,7 +949,6 @@
       const boxes = pageEl.querySelectorAll('.letter-box');
       if (!boxes.length) return;
 
-      // reset semua kotak dulu
       boxes.forEach(box => {
         const oldCursor = box.querySelector('.cursor');
         if (oldCursor) oldCursor.remove();
@@ -823,7 +960,7 @@
       cursor.className = 'cursor';
 
       let i = 0;
-      const speed = 28;
+      const speed = 22;
 
       function tick() {
         if (i >= allChars.length) { cursor.remove(); typeTimer = null; return; }
@@ -854,7 +991,7 @@
         playMusic('music/romantis.mp3');
         mode = 'romantis';
       }
-      if (to === 'p3' || to === 'p5') {
+      if (to === 'p3' || to === 'p5' || to === 'p7') {
         runTypewriter(target);
       }
     }
