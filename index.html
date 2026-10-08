@@ -150,6 +150,15 @@
       white-space: normal;
     }
 
+    .btn-skip {
+      margin-top: 12px;
+      background: transparent;
+      color: var(--maroon);
+      border: 1.5px solid var(--maroon);
+      font-size: 12px;
+      padding: 8px 18px;
+    }
+
     .popup {
       position: fixed;
       top: 50%; left: 50%;
@@ -205,6 +214,15 @@
       text-align: center;
       margin-bottom: 16px;
       color: var(--maroon);
+    }
+
+    /* Babak Topan — highlight khusus */
+    .letter-box.serious-box .babak-topan {
+      background: linear-gradient(180deg, #fff5f5 0%, #ffeaea 100%);
+      border-left: 4px solid var(--maroon);
+      padding: 14px 16px;
+      border-radius: 8px;
+      margin-top: 4px;
     }
 
     .tag {
@@ -709,18 +727,15 @@
 
     <h2 style="margin-top:35px; font-size:38px;">Make a Wish 🎂✨</h2>
 
-    <!-- Tombol menuju halaman PESAN SERIUS -->
     <button class="btn btn-more btn-long" style="margin-top:20px" onclick="go('p5','p7')">
       💔 Satu Permintaan Serius dari Mas...
     </button>
 
-    <!-- Tombol lanjut ke More Love -->
     <button class="btn btn-long" style="margin-top:12px; background:transparent; color:var(--maroon); border:1.5px solid var(--maroon);" onclick="go('p5','p6')">
       Lanjut ke Puisi Terakhir 🕊️🤍
     </button>
   </div>
 
-  <!-- =========================
   <!-- =========================
        PAGE 7 — PESAN SERIUS
   ========================= -->
@@ -729,19 +744,39 @@
     <p class="serious-sub">TOLONG DIBACA DENGAN HATI YANG TENANG</p>
     <div class="serious-divider">🤍 🕊️ 🤍</div>
 
+    <button class="btn btn-skip" onclick="skipTypewriter('p7')">⏩ Skip Animasi</button>
+
     <div class="letter-box serious-box">
 
       <p class="line serious-title">💔 Adek, Mari Kita Bicara Jujur...</p>
 
       <p class="line">Adek, mari kita bicara jujur dan pakai logika yang paling jernih. ☕</p>
 
-      <p class="line">Di sini Mas memperjuangkan hubungan ini bukan cuma pakai kata-kata manis, tapi juga lewat pengorbanan nyata. Mas kerja keras, mengajar padat dari pagi sampai sore, bikin laporan, bikin video reels berjam-jam, bikin spanduk, sampai sering kurang tidur demi menata masa depan kita. Di tengah keadaan Mas yang masih serba terbatas, Mas tetap berusaha memenuhi apa yang Adek butuhkan — dari jeans, kuota,Uang Tunai,Trasnfer,Obat-obatan Pribadi,Jajanin Adek,Hadiah Buat Adek Ratusan Ribu,Sampe Di beliin Casing Bening Buat di pasang Pas Foto Mas saat KKN tapi enggak dipasang sampai raket hampir seratus ribu. Bahkan di tempat kerja, foto Adek Mas pasang di casing HP dan wallpaper, supaya Mas selalu ingat bahwa hati Mas sudah punya tempat untuk satu perempuan.</p>
+      <p class="line">Di sini Mas memperjuangkan hubungan ini bukan cuma pakai kata-kata manis, tapi juga lewat pengorbanan nyata. Mas kerja keras, mengajar padat dari pagi sampai sore, bikin laporan, bikin video reels berjam-jam, bikin spanduk, sampai sering kurang tidur demi menata masa depan kita. Di tengah keadaan Mas yang masih serba terbatas, Mas tetap berusaha memenuhi apa yang Adek butuhkan — dari jeans, kuota, uang tunai, transfer, obat-obatan pribadi, jajanin Adek, hadiah buat Adek ratusan ribu, sampai dibeliin casing bening buat dipasang pas foto Mas saat KKN (tapi enggak dipasang), sampai raket hampir seratus ribu. Bahkan di tempat kerja, foto Adek Mas pasang di casing HP dan wallpaper, supaya Mas selalu ingat bahwa hati Mas sudah punya tempat untuk satu perempuan.</p>
 
       <p class="line">Saat status kita sempat break, Mas tetap memilih menjaga komitmen. Kemarin ada perempuan yang DM Mas, dan Mas tegaskan bahwa Mas sudah punya seseorang yang Mas perjuangkan. Mas tidak menggunakan kata "break" sebagai alasan untuk bertingkah seolah-olah bebas, dekat dengan perempuan lain, atau mencari pengganti.</p>
 
       <p class="line">Karena itu Mas ingin Adek memahami satu hal. Kalau kita sedang memperbaiki hubungan, jangan jadikan kata "break" sebagai ruang untuk membuka kembali kedekatan dengan orang lain. Mas tidak ingin mengulang kejadian seperti 2024 ataupun persoalan yang muncul belakangan.</p>
 
       <p class="line">Ada satu hal yang selama ini Mas pendam. Bukan karena Mas enggak percaya sama Adek, tapi karena Mas takut kalau Mas mengatakannya, justru membuat Adek pergi. Hari ini Mas memberanikan diri membicarakannya. Bukan untuk menjatuhkan Adek atau mengungkit masa lalu tanpa tujuan, tetapi supaya kita sama-sama memahami luka yang pernah terjadi dan bisa melangkah lebih baik ke depan. 🤍</p>
+
+      <!-- BABAK TOPAN -->
+      <p class="line"><b>❥ Babak Nol — Topan, November 2024 sampai Oktober 2026</b></p>
+      <div class="letter-box serious-box babak-topan" style="margin-top:0;">
+        <p class="line">Dek, sebelum Mas bicara soal yang lain, ada satu nama yang paling lama Mas pendam. Namanya <b>Topan</b>. Dan ini yang paling lama — dari November 2024, sampai Oktober 2026, masih berjalan.</p>
+
+        <p class="line">Sejak November 2024, Adek sudah cegil ke dia. Cinta mati ke dia. Adek bahkan <b>minta dia temuin Ayah Adek</b> — sedangkan Mas, yang sudah mau 3 tahun bersama Adek, enggak pernah sekali pun Adek suruh buat temuin Ayah Adek. Bahkan sampai awal Oktober 2026 — baru-baru ini — Adek masih chatan sama dia. Masih flirting ke dia.</p>
+
+        <p class="line">Dan lagi-lagi... semesta yang ngasih tahu Mas. Bukan Mas yang cari tahu. Mas enggak pernah nyari. Tapi semesta seakan muak dengan kelakuan Adek, sampai-sampai dia sendiri yang buka semuanya di depan Mas.</p>
+
+        <p class="line">Coba kalau semesta enggak muak — mungkin sampai sekarang Adek masih chatan terus sama Topan. Dan sampai sekarang, <b>Topan masih belum tahu kalau Adek punya Mas</b>. Sudah mau 3 tahun kita bersama, tapi dia enggak tahu apa-apa.</p>
+
+        <p class="line">Kalian pernah ribut — gara-gara Adek dibonceng cowok. Sampai Topan bilang ke Adek, "Jangan aneh-aneh di KKN, soalnya Topan juga enggak aneh-aneh." Sampai akhirnya Adek <b>nembak Topan duluan</b> — dan ditolak. Kata Topan, "Nanti 2029 aja, di ajak nikahnya."</p>
+
+        <p class="line">Adek juga sampai ngobatin dia saat dia sakit. Topan juga pernah ke posko Adek. Kalian duduk bareng. Dan masih banyak lagi yang Mas enggak tahu, dan Mas enggak mau tahu.</p>
+
+        <p class="line">Yang Mas tahu cuma satu, Dek — <b>sampai detik ini, Adek belum jujur ke Mas soal Topan</b>. Mas tahu bukan karena Adek cerita, tapi karena semesta yang buka. Itu yang paling menyakitkan. 🤍</p>
+      </div>
 
       <!-- BABAK I -->
       <p class="line"><b>❥ Babak Pertama — Iqbal, November 2024</b><br>
@@ -959,19 +994,36 @@
       const cursor = document.createElement('span');
       cursor.className = 'cursor';
 
+      // p7 = serious-page → jauh lebih cepat
+      const isSerious  = pageEl.classList.contains('serious-page');
+      const speed      = isSerious ? 3 : 22;    // 3ms/char untuk p7 (super cepat)
+      const startDelay = isSerious ? 200 : 900; // delay awal p7 hanya 0.2 detik
+      const chunk      = isSerious ? 3 : 1;     // p7 muncul 3 karakter sekaligus
+
       let i = 0;
-      const speed = 22;
 
       function tick() {
         if (i >= allChars.length) { cursor.remove(); typeTimer = null; return; }
-        const c = allChars[i];
-        c.classList.add('visible');
-        c.parentNode.insertBefore(cursor, c.nextSibling);
-        i++;
+
+        for (let k = 0; k < chunk && i < allChars.length; k++) {
+          const c = allChars[i];
+          c.classList.add('visible');
+          c.parentNode.insertBefore(cursor, c.nextSibling);
+          i++;
+        }
+
         typeTimer = setTimeout(tick, speed);
       }
 
-      typeTimer = setTimeout(tick, 900);
+      typeTimer = setTimeout(tick, startDelay);
+    }
+
+    // SKIP — langsung tampilkan semua karakter
+    function skipTypewriter(pageId) {
+      if (typeTimer) { clearTimeout(typeTimer); typeTimer = null; }
+      const pageEl = document.getElementById(pageId);
+      pageEl.querySelectorAll('.letter-box .char').forEach(c => c.classList.add('visible'));
+      pageEl.querySelectorAll('.letter-box .cursor').forEach(c => c.remove());
     }
 
     /* =========================
